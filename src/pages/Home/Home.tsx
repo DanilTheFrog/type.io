@@ -1,11 +1,12 @@
-import Key from "@/shared/UI/KeyButton"
+import { TrainingComponent } from "@/widgets/TypeTraining/TrainingComponent"
+
+
+
 
 export const Home = () => {
 
-    return (<div style={{display: "inline-flex", gap: "1rem"}}>
-        <Key label="F" />
-        <Key label="U" />
-        <Key label="C" />
-        <Key label="K" />
+
+    return (<div style={{display: "block", gap: "1rem"}}>
+        <TrainingComponent text="try to type it "/>
     </div>)
 }
