@@ -1,0 +1,22 @@
+.root {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+}
+
+.link {
+    color: #fff;
+    font-size: 16px;
+    text-decoration: none;
+    padding: 8px;
+    border-radius: 8px;
+    background: transparent;
+}
+
+.active {
+    color: #000;
+    font-size: 16px;
+    text-decoration: none;
+    background: #F8FFE5;
+}
