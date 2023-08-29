@@ -1,6 +1,5 @@
 type ICONS = 'profile';
 import css from './Icon.module.css';
-import profileImg from './profile.svg';
 
 interface Props {
     type: ICONS
@@ -8,9 +7,10 @@ interface Props {
 
 const profile = (
     <div>
-        <img className={css.profile} src={profileImg} alt="profile" />
+        <img className={css.profile} src={"images/profile.svg"} alt="profile" />
     </div>
 )
+
 
 export const Icon = (props: Props) => {
     

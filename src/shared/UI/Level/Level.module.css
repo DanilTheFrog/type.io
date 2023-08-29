@@ -1,0 +1,29 @@
+.root {
+    padding: 8px;
+    font-size: 20px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 182px;
+    border-radius: 8px;
+}
+
+.avaliable {
+    background: #4E4187;
+    border: 2px solid #B1A2F4;
+    color: #FFF;
+}
+
+.unavailable {
+    border: 2px solid #4E4187;
+    color: rgba(255, 255, 255, 0.60);
+    background: transparent;
+}
+
+
+.star {
+    width: 24px;
+    height: 24px;
+}
+
