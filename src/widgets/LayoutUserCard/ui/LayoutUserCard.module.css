@@ -1,0 +1,12 @@
+.root {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.name {
+    font-size: 16px;
+    font-weight: 300;
+    color: white;
+    margin-right: 8px;
+}
