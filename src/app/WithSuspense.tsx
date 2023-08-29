@@ -1,14 +1,15 @@
 import { Loading } from "@/shared/UI/Loading/";
 import { Suspense } from "react";
 
-interface Props {
-    children: React.ReactNode;
-}
 
-export const WithSuspense = (props: Props) => {
-    return(
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export function withSuspense<P>(Component: React.ComponentType & any) {
+    return function WithSuspense(props: P) {
+      return (
         <Suspense fallback={<Loading />}>
-            {props.children}
+          <Component {...props} />
         </Suspense>
-    )
-}
+      );
+    };
+  }

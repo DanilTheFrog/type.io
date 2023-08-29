@@ -1,21 +1,18 @@
 import Home from "@/pages/Home";
 import { lazy } from 'react';
 
-import { LayoutUserCard } from "@/widgets/LayoutUserCard";
-import { LayoutHeader } from "@/widgets/Layoutheader";
-import { Outlet, createBrowserRouter } from "react-router-dom";
-import { WithSuspense } from "./WithSuspense";
+import { createBrowserRouter } from "react-router-dom";
+import { baseLayout } from "./Layouts/baseLayout";
+import { withSuspense } from "./WithSuspense";
 
-const TestingPage = lazy(() => import('@/pages/testing'))
-const TrainingPage = lazy(() => import('@/pages/training'))
+const TestingPage = withSuspense(lazy(() => import('@/pages/testing')))
+const TrainingPage = withSuspense(lazy(() => import('@/pages/training')));
 
 
 export const appRouter = () => createBrowserRouter([
     {
-        element: (<>
-        <LayoutHeader rightContentSlot={<LayoutUserCard name={"Хуй Моржовый"}/>}/>
-        <Outlet />
-        </>),
+        element: baseLayout,
+
         errorElement: <div>Error</div>,
         children: [
             {
@@ -24,11 +21,11 @@ export const appRouter = () => createBrowserRouter([
             },
             {
                 path: "/testing",
-                element: <WithSuspense ><TestingPage/></WithSuspense>
+                element: <TestingPage />
             },
             {
                 path: "/training",
-                element: <WithSuspense><TrainingPage/></WithSuspense>
+                element: <TrainingPage/>
             },
             {
                 path: "/test",

@@ -1,5 +1,5 @@
 import Key from "@/shared/UI/KeyButton";
-import { useKeyPress } from "@/shared/hooks/useKeyPress";
+import { useKeyPress } from "@/shared/lib/hooks/useKeyPress";
 import { IKeyPressableProps } from "./KeyPressable.interface";
 
 
