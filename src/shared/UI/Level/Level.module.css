@@ -9,6 +9,10 @@
     border-radius: 8px;
 }
 
+.link {
+    text-decoration: none;
+}
+
 .avaliable {
     background: #4E4187;
     border: 2px solid #B1A2F4;

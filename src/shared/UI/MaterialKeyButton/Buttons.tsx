@@ -1,21 +1,27 @@
-export const Key = () => {
-    return null;
+import css from './Buttons.module.css';
+
+type KeyType = 'tab' | 'enter' | 'leftShift' | 'rightShift' | 'backspace' | 'space' | 'key';
+
+export interface IMeterialKeyProps {
+    text: string;
+    textAlign?: 'left' | 'center' | 'right';
+    value?: string;
+    color: 'black' | 'purple';
+    type: KeyType;
+    isPressed?: boolean;
+    inactive?: boolean;
 }
-export const LShift = () => {
-    return null;
-}
-export const RShift = () => {
-    return null;
-}
-export const CapsLock = () => {
-    return null;
-}
-export const Control = () => {
-    return null;
-}
-export const Tab = () => {
-    return null;
-}
-export const Enter = () => {
-    return null;
+
+export const MaterialKeyButton:React.FC<IMeterialKeyProps> = (props: IMeterialKeyProps): JSX.Element => {
+
+    const rootClasses = `${css.root} ${props.color === 'black' ? css.black : css.purple} ${props.inactive ? css.inactive : ''} ${props.isPressed ? css["pressed_"+props.color] : ''}`;
+    const sizeClasses = `${css[props.type]} ${props.textAlign ? css[props.textAlign] : css.center}`;
+
+    return (
+        <div className={`${rootClasses} ${sizeClasses}`}>
+            <div>
+                {props.text}
+            </div>
+        </div>
+    )
 }

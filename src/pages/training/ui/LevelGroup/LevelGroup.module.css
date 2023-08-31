@@ -1,0 +1,18 @@
+.root {
+    margin-top: 60px;
+}
+
+.header {
+    font-size: 20px;
+    color: #FFf;
+    font-weight: 500;
+    text-align: left;
+}
+
+.levels {
+    width: 100%;
+    display: inline-flex;
+    flex-wrap: wrap;
+    row-gap: 30px;
+    column-gap: 16px;
+}

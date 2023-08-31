@@ -1,0 +1,20 @@
+.root {
+    width: 800px;
+    padding: 20px;
+    font-size: 20px;
+    line-height: 140%;
+    border-radius: 25px;
+    background-color: #ECECEC;
+    text-align: left;
+    float: inline-end;
+}
+
+.prev {
+    font-weight: 700;
+    color: #3083DC;
+}
+
+.next {
+    font-weight: 400;
+    color: #000;    
+}

@@ -1,0 +1,75 @@
+:root {
+    --px: 14px;
+}
+
+.root {
+    border-radius: 6px;
+    color: #fff;
+    font-size: 24px;
+    padding: 8px 14px;
+    width: fit-content;
+    box-sizing: content-box;
+    font-weight: 400;
+}
+
+
+
+.black {
+    border: 1px solid #48515B;
+    background: #2C2E30;
+    box-shadow: 0px 4px 0px 2px #000;
+}
+
+.purple {
+    border: 1px solid #2B244A;
+    background: #4E4187;
+    box-shadow: 0px 4px 0px 2px #000;
+}
+
+.pressed_black {
+    border-color:  #48515B;
+    background: #1A1A1A;
+}
+
+.pressed_purple {
+    border-color: #2B244A;
+    background: #342C5B;
+}
+
+
+
+.left {
+    text-align: left;
+}
+
+.right {
+    text-align: right;
+}
+
+.center {
+    text-align: center;
+}
+
+
+
+.key {
+    width: 14px;
+}
+.leftShift, .enter {
+    width: 93px;
+}
+.rightShift {
+    width: 117px;
+}
+.caps {
+    width: 72px;
+}
+.tab {
+    width: 116px;
+}
+.space {
+    width: 332px;
+}
+.backspace {
+    width: 96px;
+}

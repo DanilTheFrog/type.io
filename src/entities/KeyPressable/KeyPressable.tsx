@@ -1,9 +1,16 @@
-import Key from "@/shared/UI/KeyButton";
+import { MaterialKeyButton } from "@/shared/UI/MaterialKeyButton";
+import { IMeterialKeyProps } from "@/shared/UI/MaterialKeyButton/Buttons";
 import { useKeyPress } from "@/shared/lib/hooks/useKeyPress";
-import { IKeyPressableProps } from "./KeyPressable.interface";
 
 
-export const KeyPressableWithContext = ({label, value}: IKeyPressableProps) => {
+
+interface IKeyPressableProps {
+    value: string;
+}
+
+export const KeyPressableWithContext = ({ value, ...props }: IMeterialKeyProps & IKeyPressableProps) => {
     const isPressed = useKeyPress(value.toLowerCase());
-    return <Key label={label} isPressed={isPressed}/>
+
+    
+    return <MaterialKeyButton {...props} isPressed={isPressed} />;
 }

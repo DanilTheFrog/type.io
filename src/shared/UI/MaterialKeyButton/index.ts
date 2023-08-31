@@ -1,3 +1,2 @@
-import * as MaterialKeyButton from './Buttons'
+export { MaterialKeyButton } from "./Buttons.jsx";
 
-export default {...MaterialKeyButton}

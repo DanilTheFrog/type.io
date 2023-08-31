@@ -1,16 +1,20 @@
 import { useEffect, useState } from 'react';
 
-export const useKeyPress = (keyTarget: string) => {
+export const useKeyPress = (keyTarget: string, isCaseSensitive = false) => {
     const [isPressed, setIsPressed] = useState(false);
 
     const handleKeyDown = (e: KeyboardEvent) => {
-        if (e.key === keyTarget) {
+        let key = e.key;
+        if(!isCaseSensitive) key = key.toLowerCase();
+        if (key === keyTarget) {
             setIsPressed(true);
         }
     }
 
     const handleKeyUp = (e: KeyboardEvent) => {
-        if (e.key === keyTarget) {
+        let key = e.key;
+        if(!isCaseSensitive) key = key.toLowerCase();
+        if (key === keyTarget) {
             setIsPressed(false);
         }
     }

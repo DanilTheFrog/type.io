@@ -1,2 +1,2 @@
-import { Keyboard } from './Keyboard';
-export default Keyboard;
+export { Keyboard } from './ui/Keyboard';
+

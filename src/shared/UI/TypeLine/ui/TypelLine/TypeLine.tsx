@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
+import { ITypeLineDTO } from '../../TypeLineDTO';
 import style from './TypeLine.module.css';
-import { ITypeLineDTO } from './TypeLineDTO';
 
 
 export const TypeLine = ({dto}: {dto: ITypeLineDTO}) => {
