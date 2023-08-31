@@ -2,9 +2,9 @@
 
 
 
-const keyLayout = ({keys}: {keys:{label:string, value:string}[][]}) => {
-    return null;
-}
+// const keyLayout = ({keys}: {keys:{label:string, value:string}[][]}) => {
+//     return null;
+// }
 
 
 export const Keyboard = ({keyset, KeyComponent} : {keyset: string[][], KeyComponent: React.FC<{label: string, value: string}>}) => {

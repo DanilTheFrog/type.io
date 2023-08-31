@@ -3,7 +3,7 @@ import { lazy } from 'react';
 
 import { createBrowserRouter } from "react-router-dom";
 import { baseLayout } from "./Layouts/baseLayout";
-import { withSuspense } from "./WithSuspense";
+import { withSuspense } from "./withSuspense";
 
 const TestingPage = withSuspense(lazy(() => import('@/pages/testing')))
 const TrainingPage = withSuspense(lazy(() => import('@/pages/training')));
