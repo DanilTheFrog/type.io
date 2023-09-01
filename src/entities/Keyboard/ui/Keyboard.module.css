@@ -1,5 +1,16 @@
 .keyboardLayout {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(4, 1fr);
+    display: flex;
+    flex-wrap: wrap;
+    width: 818px;
+    row-gap: 16px;
+}
+
+.keyRow {
+    width: 100%;
+    display: inline-flex;
+    column-gap: 12px;
+}
+
+.keyRow:last-child {
+    justify-content: center;
 }

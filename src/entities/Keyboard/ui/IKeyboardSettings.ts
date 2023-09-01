@@ -1,4 +1,12 @@
-const NumRow = [
+import { IMaterialKeyProps } from "@/shared/UI/MaterialKeyButton/Buttons"
+
+
+const NumRow: IMaterialKeyProps[] = [
+    {
+        value: "`",
+        label: "`",
+        color: 'black'
+    },
     {
         value: "1",
         label: "1",
@@ -46,10 +54,24 @@ const NumRow = [
     {
         value: "=",
         label: "=",
+    },
+    {
+        color: 'black',
+        value: "backspace",
+        label: "←",
+        type: 'backspace',
+        textAlign: 'right'
     }
 ]
 
-const EnKeys1Row =   [
+const EnKeys1Row:IMaterialKeyProps[] =   [
+    {
+        value: "tab",
+        label: "Tab",
+        type: 'tab',
+        color: 'black',
+        textAlign: 'left'
+    },
     {
         value: "q",
         label: "Q",
@@ -93,19 +115,28 @@ const EnKeys1Row =   [
     {
         value: "[",
         label: "[",
+        color: 'black'
     },
     {
         value: "]",
         label: "]",
+        color: 'black'
     },
     {
         value: "\\",
         label: "\\",
+        color: 'black'
     }
 ]
 
 
-const EnKeys2Row = [
+const EnKeys2Row: IMaterialKeyProps[] = [
+    {
+        value: "caps",
+        label: "Caps",
+        type: 'caps',
+        color: 'black',
+    },
     {
         value: "a",
         label: "A",
@@ -149,10 +180,24 @@ const EnKeys2Row = [
     {
         value: "'",
         label: "'",
+    },
+    {
+        value: "enter",
+        label: "Enter",
+        type: 'enter',
+        color: 'black',
+        textAlign: 'right'
     }
 ]
 
-const EnKeys3Row = [
+const EnKeys3Row: IMaterialKeyProps[] = [
+    {
+        value: "shift",
+        label: "Shift",
+        type: 'leftShift',
+        color: 'black',
+        textAlign: 'left'
+    },
     {
         value: "z",
         label: "Z",
@@ -192,6 +237,14 @@ const EnKeys3Row = [
     {
         value: "/",
         label: "/",
+        color: 'black'
+    },
+    {
+        value: "shift",
+        label: "Shift",
+        type: 'rightShift',
+        color: 'black',
+        textAlign: 'right'
     }
 ]
 

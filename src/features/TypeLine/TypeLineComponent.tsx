@@ -13,8 +13,6 @@ export const TypeLineComponent = ({text, Component}:Props) => {
     useEffect(() => {
 
         const inputHandler = (e: KeyboardEvent) => {
-            console.log(e.key);
-            console.log(dto);
             if(e.key === TypeLineData.getNext(dto)) {
     
                 setDto(TypeLineData.applyInput(dto));

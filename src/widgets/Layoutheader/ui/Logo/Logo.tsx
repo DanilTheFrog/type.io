@@ -4,7 +4,7 @@ import logo from './logo.svg'
 export const Logo = () => {
     return(
         <Link to={"/"}>
-            <div className={style.root} style={{backgroundImage: `url(${logo})`}}></div>
+            <img className={style.root} src={logo}/>
         </Link>
     )
 }

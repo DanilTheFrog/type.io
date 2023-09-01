@@ -1,31 +1,31 @@
+import { KeyPressableWithContext } from '@/entities/KeyPressable/KeyPressable';
+import { IMaterialKeyProps } from '@/shared/UI/MaterialKeyButton/Buttons';
+import css from './Keyboard.module.css';
 
 
+interface KeyboardProps {
+    keyset: IMaterialKeyProps[][];
+}
 
 
-// const keyLayout = ({keys}: {keys:{label:string, value:string}[][]}) => {
-//     return null;
-// }
+export const Keyboard = ({keyset} : KeyboardProps) => {
 
-
-export const Keyboard = ({keyset, KeyComponent} : {keyset: string[][], KeyComponent: React.FC<{label: string, value: string}>}) => {
-    return (
-        <div style={{display: "flex", flexDirection: "column", alignItems: "center"}}>
-            {
-            
-            keyset.map((row) => {
+    return(
+        <div className={css.keyboardLayout}>
+            {keyset.map(keyRow => {
                 return(
-                    <div style={{display: "inline-flex", gap: "1rem", marginTop: '1rem'}} key={row[0]+"_keyrow"}>
-                        {
-                            row.map((key) => (
-                                <KeyComponent label={key} key={'button_'+key} value={key}/>
-                            ))
-                        }
+                    <div className={css.keyRow} key={keyRow[0].value}>
+                        {keyRow.map(key => {
+                            const {value} = key;
+                            if (typeof value === 'string')
+                            return (<KeyPressableWithContext  value={value} {...key} key={'button_'+key.value+"_"+key.type}/>)})}
                     </div>
-                    )
-
-                })
-            }
-
+                )
+            })}
+            <div className={css.keyRow}>
+                <KeyPressableWithContext label='space' type='space' value=' ' key={'button_space'}/>
+            </div>
         </div>
     )
+
 }

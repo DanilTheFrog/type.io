@@ -1,26 +1,28 @@
 import css from './Buttons.module.css';
 
-type KeyType = 'tab' | 'enter' | 'leftShift' | 'rightShift' | 'backspace' | 'space' | 'key';
+type KeyType = 'tab' | 'enter' | 'leftShift' | 'rightShift' | 'backspace' | 'space' | 'key' | 'caps';
 
-export interface IMeterialKeyProps {
-    text: string;
+export interface IMaterialKeyProps {
+    label: string;
     textAlign?: 'left' | 'center' | 'right';
     value?: string;
-    color: 'black' | 'purple';
-    type: KeyType;
+    color?: 'black' | 'purple';
+    type?: KeyType;
     isPressed?: boolean;
     inactive?: boolean;
 }
 
-export const MaterialKeyButton:React.FC<IMeterialKeyProps> = (props: IMeterialKeyProps): JSX.Element => {
+export const MaterialKeyButton:React.FC<IMaterialKeyProps> = (props: IMaterialKeyProps): JSX.Element => {
+    const color = props.color === 'black' ? 'black' : 'purple';
+    const rootClasses = `${css.root} ${css[color]} ${props.inactive ? css.inactive : ''} ${props.isPressed ? css["pressed_"+color] : ''}`;
+    const sizeClasses = `${css[props.type ? props.type : 'key']} ${props.textAlign ? css[props.textAlign] : css.center}`;
 
-    const rootClasses = `${css.root} ${props.color === 'black' ? css.black : css.purple} ${props.inactive ? css.inactive : ''} ${props.isPressed ? css["pressed_"+props.color] : ''}`;
-    const sizeClasses = `${css[props.type]} ${props.textAlign ? css[props.textAlign] : css.center}`;
+    if(color === 'purple') console.log(props.label);
 
     return (
         <div className={`${rootClasses} ${sizeClasses}`}>
             <div>
-                {props.text}
+                {props.label}
             </div>
         </div>
     )
