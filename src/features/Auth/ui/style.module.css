@@ -1,0 +1,40 @@
+.root {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.item {
+    width: 100%;
+    margin-bottom: 24px;
+}
+.item:last-child {
+    margin-bottom: 0px;
+}
+
+.label {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.root input{
+    border-radius: 8px;
+    border: 2px solid #4E4187;
+    background: #ECECEC;
+    padding: 8px 16px;
+    width: 100%;
+}
+
+.root input[type='submit'] {
+    background: #4E4187;
+    text-align: center;
+    color: #fff;
+    width: 40%;
+}
+
+.warning {
+    color: red;
+    font-size: 14px;
+}

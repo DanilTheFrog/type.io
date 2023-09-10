@@ -14,10 +14,8 @@ export interface IMaterialKeyProps {
 
 export const MaterialKeyButton:React.FC<IMaterialKeyProps> = (props: IMaterialKeyProps): JSX.Element => {
     const color = props.color === 'black' ? 'black' : 'purple';
-    const rootClasses = `${css.root} ${css[color]} ${props.inactive ? css.inactive : ''} ${props.isPressed ? css["pressed_"+color] : ''}`;
+    const rootClasses = `${css.root} ${css[color]} ${props.inactive && css.inactive} ${props.isPressed && css["pressed_"+color]}`;
     const sizeClasses = `${css[props.type ? props.type : 'key']} ${props.textAlign ? css[props.textAlign] : css.center}`;
-
-    if(color === 'purple') console.log(props.label);
 
     return (
         <div className={`${rootClasses} ${sizeClasses}`}>

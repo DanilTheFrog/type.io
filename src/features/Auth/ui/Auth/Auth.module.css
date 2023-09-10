@@ -1,0 +1,25 @@
+.root {
+    width: 800px;
+    margin: auto;
+    overflow: hidden;
+    padding-bottom: 90px;
+}
+.hidden {
+    display: none;
+}
+.button {
+    border: 0px;
+    cursor: pointer;
+    margin: 20px 20px 0px 20px;
+    background-color: transparent;
+}
+.header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.content {
+    width: 394px;
+    margin: auto;
+}
