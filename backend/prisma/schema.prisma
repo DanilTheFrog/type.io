@@ -1,0 +1,33 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id BigInt @id @default(autoincrement())
+  email String @unique
+  passwordHash String @map("password_hash")
+}
+
+model TypingLevel {
+  id Int @id @default(autoincrement())
+  name String
+  lang String
+  text String
+  levelSection TypingLevelSection @relation(fields: [levelSectionId], references: [id])
+  levelSectionId Int @map("level_section_id")
+}
+
+model TypingLevelSection {
+  id Int @id @default(autoincrement())
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt() @map("updated_at")
+  levels TypingLevel[]
+}
