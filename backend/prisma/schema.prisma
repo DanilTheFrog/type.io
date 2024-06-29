@@ -11,23 +11,31 @@ datasource db {
 }
 
 model User {
-  id BigInt @id @default(autoincrement())
-  email String @unique
+  id           BigInt @id @default(autoincrement())
+  email        String @unique
   passwordHash String @map("password_hash")
+  data         String
+
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt() @map("updated_at")
+  Token     Token[]
 }
 
 model TypingLevel {
-  id Int @id @default(autoincrement())
+  id   Int    @id @default(autoincrement())
   name String
   lang String
   text String
-  levelSection TypingLevelSection @relation(fields: [levelSectionId], references: [id])
-  levelSectionId Int @map("level_section_id")
-}
 
-model TypingLevelSection {
-  id Int @id @default(autoincrement())
   createdAt DateTime @default(now()) @map("created_at")
   updatedAt DateTime @updatedAt() @map("updated_at")
-  levels TypingLevel[]
+}
+
+model Token {
+  uid       String   @id
+  userId    BigInt   @map("user_id")
+  user      User     @relation(fields: [userId], references: [id])
+  refreshToken   String
+  userAgent String @map("user_agent")
+  expiresAt DateTime @map("expires_at")
 }

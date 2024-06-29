@@ -8,9 +8,10 @@
 
     "baseUrl": "./",
     "paths": {
-      "@/*": ["src/*"]
+      "@/*": ["src/*"],
+      "@base/*": ["./*"],
     }
   },
-  "include": ["src/**/*.ts"],
+  "include": ["src/**/*.ts", "prisma/client.ts"],
   "exclude": ["node_modules"]
 }
